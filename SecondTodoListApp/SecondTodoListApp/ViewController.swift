@@ -24,7 +24,8 @@ class ViewController: UIViewController {
         // Setup
         
         if !UserDefaults().bool(forKey: "setup") {
-            UserDefaults().set("0" , forKey: "setup")
+            UserDefaults().set(true , forKey: "setup")
+            UserDefaults().set(0, forKey: "count")
         }
         
         // Get all current saved tasks
