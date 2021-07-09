@@ -22,16 +22,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func configureSongs() {
-        songs.append(Song(name: "Panorama", albumName: "Onerelear", artistName: "Izone", imageName: "cover1", trackName: "track1"))
-        songs.append(Song(name: "Wego", albumName: "9 Way Ticket", artistName: "fromis_9", imageName: "cover2", trackName: "track2"))
-        songs.append(Song(name: "Dynamite", albumName: "Dynamite", artistName: "BTS", imageName: "cover3", trackName: "track3"))
-        songs.append(Song(name: "Panorama", albumName: "Onerelear", artistName: "Izone", imageName: "cover1", trackName: "track1"))
-        songs.append(Song(name: "Wego", albumName: "9 Way Ticket", artistName: "fromis_9", imageName: "cover2", trackName: "track2"))
-        songs.append(Song(name: "Dynamite", albumName: "Dynamite", artistName: "BTS", imageName: "cover3", trackName: "track3"))
-        songs.append(Song(name: "Panorama", albumName: "Onerelear", artistName: "Izone", imageName: "cover1", trackName: "track1"))
-        songs.append(Song(name: "Wego", albumName: "9 Way Ticket", artistName: "fromis_9", imageName: "cover2", trackName: "track2"))
-        songs.append(Song(name: "Dynamite", albumName: "Dynamite", artistName: "BTS", imageName: "cover3", trackName: "track3"))
-        
+        songs.append(Song(name: "Panorama", albumName: "Onerelear", artistName: "Izone", imageName: "cover1", trackName: "panorama"))
+        songs.append(Song(name: "Wego", albumName: "9 Way Ticket", artistName: "fromis_9", imageName: "cover2", trackName: "wego"))
+        songs.append(Song(name: "Dynamite", albumName: "Dynamite", artistName: "BTS", imageName: "cover3", trackName: "dynamite"))
+        songs.append(Song(name: "Panorama", albumName: "Onerelear", artistName: "Izone", imageName: "cover1", trackName: "panorama"))
+        songs.append(Song(name: "Wego", albumName: "9 Way Ticket", artistName: "fromis_9", imageName: "cover2", trackName: "wego"))
+        songs.append(Song(name: "Dynamite", albumName: "Dynamite", artistName: "BTS", imageName: "cover3", trackName: "dynamite"))
+        songs.append(Song(name: "Panorama", albumName: "Onerelear", artistName: "Izone", imageName: "cover1", trackName: "panorama"))
+        songs.append(Song(name: "Wego", albumName: "9 Way Ticket", artistName: "fromis_9", imageName: "cover2", trackName: "wego"))
+        songs.append(Song(name: "Dynamite", albumName: "Dynamite", artistName: "BTS", imageName: "cover3", trackName: "dynamite"))
     }
     
     //Table
@@ -51,7 +50,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = song.name
         cell.detailTextLabel?.text = song.albumName
         cell.accessoryType = .disclosureIndicator
-        cell.imageView?.image = UIImage(named: song.imageName )
         cell.imageView?.image = UIImage(named: song.imageName)
         cell.textLabel?.font = UIFont(name: "Helvetica-Bold", size: 18)
         cell.detailTextLabel?.font = UIFont(name: "Helvetica", size: 17)
@@ -64,15 +62,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // present the player
         let position = indexPath.row
-        
-        // songs
         guard let vc = storyboard?.instantiateViewController(identifier: "player") as? PlayerViewController else {
             return
         }
         
         vc.songs = songs
         vc.position = position
-        
+        print("[vc positions]: ", vc.position)
         present(vc, animated: true)
         
     }

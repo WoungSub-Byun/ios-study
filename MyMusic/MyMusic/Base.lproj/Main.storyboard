@@ -86,7 +86,7 @@
         <!--Player View Controller-->
         <scene sceneID="WbM-1G-Zc4">
             <objects>
-                <viewController id="3Ox-tc-awI" customClass="PlayerViewController" customModule="MyMusic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="player" id="3Ox-tc-awI" customClass="PlayerViewController" customModule="MyMusic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jyF-qe-Njk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
