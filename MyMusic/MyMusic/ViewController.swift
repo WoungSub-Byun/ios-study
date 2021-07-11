@@ -68,7 +68,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         vc.songs = songs
         vc.position = position
-        print("[vc positions]: ", vc.position)
+        
         present(vc, animated: true)
         
     }
