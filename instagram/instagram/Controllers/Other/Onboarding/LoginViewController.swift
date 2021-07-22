@@ -192,7 +192,7 @@ class LoginViewController: UIViewController {
             return
         }
         
-        // login functionality
+        // lo gin functionality
         
         var username: String?
         var email: String?
@@ -240,7 +240,8 @@ class LoginViewController: UIViewController {
     
     @objc private func didTapCreateAccountButton() {
         let vc = RegisterViewController()
-        present(vc, animated: true)
+        vc.title = "Create New Account"
+        present(UINavigationController(rootViewController: vc), animated: true)
     }
     
     
