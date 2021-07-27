@@ -35,6 +35,7 @@ final class SettingsViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
+        configureModels()
     }
     
     private func configureModels() {
@@ -45,9 +46,11 @@ final class SettingsViewController: UIViewController {
         ]
         data.append(section)
     }
+    
     private func didTapLogOut() {
         let actionSheet = UIAlertController(title: "Log Out",
-                                            message: "Are you sure you want to Log out?", preferredStyle: .actionSheet)
+                                            message: "Are you sure you want to Log out?",
+                                            preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Cancel",
                                             style: .cancel, handler: nil))
         actionSheet.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { _ in
